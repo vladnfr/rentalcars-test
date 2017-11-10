@@ -8,4 +8,4 @@ for task1:
 
 for task2:
 # node server.js
-# go to localhost:3000/ then click on the button search then click on the view want to see
+# go to localhost:3000/ then click on the button search then click on the view you want to see
