@@ -1,0 +1,44 @@
+<div class="container">
+  <form action="/search">
+    <input class="btn btn-dark" type="submit" value="Go Back"/>
+  </form>
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Specification</th>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+
+<script>
+// take the string from handlebars
+let dataStr = "{{dataStr}}";
+
+// parse it and put in the correct quotes
+let jsObj = JSON.parse(dataStr.replace(/&quot;/g,'"'));
+
+// get the list
+let carsList = jsObj.carsList;
+
+// get the table
+let tbody = document.getElementsByTagName('tbody')[0];
+
+// populate the table
+for (let i = 0; i < carsList.length; i++)
+{
+  let tr = document.createElement('tr');
+
+  let td_num = document.createElement('td');
+  let td_spec = document.createElement('td');
+
+  td_num.innerHTML = carsList[i].number;
+  td_spec.innerHTML = carsList[i].specification;
+
+  tr.appendChild(td_num);
+  tr.appendChild(td_spec);
+
+  tbody.appendChild(tr);
+}
+</script>

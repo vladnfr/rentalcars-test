@@ -1,0 +1,56 @@
+<div class="container">
+  <form action="/search">
+    <input class="btn btn-dark" type="submit" value="Go Back"/>
+  </form>
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Vehicle Name</th>
+      <th>Car Type</th>
+      <th>Supplier</th>
+      <th>Rating</th>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+
+<script>
+// take the string from handlebars
+let dataStr = "{{dataStr}}";
+
+// parse it and put in the correct quotes
+let jsObj = JSON.parse(dataStr.replace(/&quot;/g,'"'));
+
+// get the list
+let carTypes = jsObj.carTypes;
+
+// get the table
+let tbody = document.getElementsByTagName('tbody')[0];
+
+// populate the table
+for (let i = 0; i < carTypes.length; i++)
+{
+  let tr = document.createElement('tr');
+
+  let td_num = document.createElement('td');
+  let td_name = document.createElement('td');
+  let td_carType = document.createElement('td');
+  let td_supplier = document.createElement('td');
+  let td_rating = document.createElement('td');
+
+  td_num.innerHTML = carTypes[i].number;
+  td_name.innerHTML = carTypes[i].name;
+  td_carType.innerHTML = carTypes[i].carType;
+  td_supplier.innerHTML = carTypes[i].supplier;
+  td_rating.innerHTML = carTypes[i].rating;
+
+  tr.appendChild(td_num);
+  tr.appendChild(td_name);
+  tr.appendChild(td_carType);
+  tr.appendChild(td_supplier);
+  tr.appendChild(td_rating);
+
+  tbody.appendChild(tr);
+}
+</script>

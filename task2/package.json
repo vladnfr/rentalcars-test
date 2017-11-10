@@ -1,0 +1,15 @@
+{
+  "name": "rentalcars-test",
+  "version": "1.0.0",
+  "description": "on user's command, executes various Java programs. These takes as input a json file representing vehicles offers and outputs the tables asked in task1 as json files. Node takes these json and shows the contents on the website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "express-handlebars": "*"
+  }
+}
