@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "SearchResult",
+    "type": "object",
+    "additionalProperties" : false,
+    "properties": {
+        "Search": {
+            "type" : "object",
+            "additionalProperties" : false,
+            "properties" : {
+                "VehicleList" : {
+                    "type" : "array",
+                    "items" : {
+                        "type" : "object",
+                        "additionalProperties" : false,
+                        "properties" : {
+                            "sipp" : {
+                                "type" : "string",
+                                "pattern" : "^[M,E,C,I,S,F,P,L,X][B,C,D,W,T,F,P,V,X][M,A][N,R]$"
+                            },
+                            "name" : {
+                                "type" : "string",
+                                "minLength" : 1
+                            },
+                            "price" : {
+                                "type" : "number",
+                                "minimum" : 0
+                            },
+                            "supplier" : {
+                                "type" : "string",
+                                "minLength" : 1
+                            },
+                            "rating" : {
+                                "type" : "number",
+                                "minimum" : 0,
+                                "maximum" : 10
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
